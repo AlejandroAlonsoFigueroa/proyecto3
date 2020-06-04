@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +20,7 @@ public class ConexionDB {
     protected Connection conex;
     protected ResultSet rs;
     private final String jdbc_drive = "org.postgresql.Driver";
-    private final String db_url = "jdbc:postgresql://127.0.0.1:5432/sonar";
+    private final String db_url = "jdbc:postgresql://127.0.0.1:5432/postgres";
     private final String user = "sonar";
     private final String pass = "gustavo18";
     
@@ -39,5 +40,16 @@ public class ConexionDB {
         }
     }
     
-    
+    public boolean execute(String sql){
+        boolean res = false;
+        try {
+            Statement st = conex.createStatement();
+            st.execute(sql);
+            res = true;
+        } catch (Exception e) {
+            
+        }
+
+        return res;
+    }
 }
