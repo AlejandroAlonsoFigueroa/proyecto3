@@ -15,5 +15,6 @@ public class DAOPersona {
     }
     public void funcionPrueba() {
         System.out.println("Imprime algo");
+        System.out.println("No se xdxd");
     }
 }
