@@ -8,6 +8,12 @@ public class DAOPersona {
         ConexionDB con = ConexionDB.getInstance();
         String sql="insert into persona (clave,nombre,direccion,telefono) values('"+p.getClave()+"','"+p.getNombre()+"','"+p.getDireccion()+"','"+p.getTelefono()+"')";
         res = con.execute(sql);
+        
         return res;
+        
+        
+    }
+    public void funcionPrueba() {
+        System.out.println("Imprime algo");
     }
 }
